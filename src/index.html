@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sage Cancer Research</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.styl" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="/"><strong>Sage</strong> Cancer Research</a>
+            </div>
+            <div class="nav-content">
+                <!-- Desktop Links -->
+                <ul class="nav-links desktop-only">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#how-we-work">How We Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <!-- Mobile Menu Icon -->
+                <div class="mobile-only" id="menuOpen">
+                    <span class="material-icons">menu</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <div class="nav-logo">
+                    <a href="/"><strong>Sage</strong> Cancer Research</a>
+                </div>
+                <div class="mobile-menu-close" id="menuClose">
+                    <span class="material-icons">close</span>
+                </div>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#how-we-work">How We Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <section id="overview" class="slat">
+                <h2>Overview</h2>
+                <p>
+                    This is the overview section. Here you can find a high-level
+                    summary of our mission and the impact we're making.
+                </p>
+            </section>
+        </main>
+
+        <script type="module" src="index.js"></script>
+    </body>
+</html>

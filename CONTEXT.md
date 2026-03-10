@@ -16,7 +16,7 @@ This project is a modern, responsive landing page focused on cancer-related info
 ## Design Tokens
 - **Colors:**
     - `black`: `#0E101A`
-    - `brand-dark`: `#1F3042`
+    - `brand-gray-dark`: `#1F3042`
 - **Layout:**
     - `spacing-unit`: `4px`
     - `slat-horizontal-margin`: `16px` (mobile), `40px` (desktop)

@@ -16,9 +16,16 @@ $spacing-unit: 4px !default;
 
 // Color Variables
 $black: #0e101a !default;
-$brand-dark: #1f3042 !default;
+$brand-gray-dark: #1f3042 !default;
+$brand-gray-light: #80879c !default;
+$brand-blue-light: #457ca1 !default;
 $border-color: #dee0e5 !default;
 $white: #ffffff !default;
+
+// Font-weight Variables
+$font-weight-regular: 300 !default;
+$font-weight-medium: 400 !default;
+$font-weight-bold: 700 !default;
 
 // Layout Variables
 $slat-horizontal-margin-mobile: space(4) !default;

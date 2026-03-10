@@ -20,13 +20,101 @@
     flex-wrap: wrap;
 }
 
+.cancer-portfolio-item {
+    display: flex;
+    flex-direction: column;
+    gap: vars.space(8);
+
+    .portfolio-chip {
+        display: flex;
+        padding: vars.space(2) vars.space(4) vars.space(2) vars.space(3);
+        align-items: center;
+        gap: 9px;
+        border-radius: 500px;
+        background: #f7f8fc;
+        span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            aspect-ratio: 1/1;
+            color: vars.$brand-blue-light;
+            font-size: 2.1rem;
+        }
+    }
+
+    .properties {
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: vars.space(2) vars.space(1);
+            list-style: none;
+            padding: 0;
+            strong {
+                display: inline-block;
+                margin-left: vars.space(2);
+                font-weight: vars.$font-weight-medium;
+            }
+        }
+    }
+
+    .primary-link,
+    .secondary-link {
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: vars.$font-weight-medium;
+        line-height: 140%; /* 25.2px */
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .secondary-link {
+        color: vars.$brand-gray-light;
+    }
+
+    .item-image {
+        width: 100%;
+        order: 1;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        aspect-ratio: 16 / 9;
+        background-color: #f6f7fb;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        &.cckp {
+            background-image: url("./assets/images/cckp-bg.jpg");
+        }
+        &.genie {
+            background-image: url("./assets/images/genie-bg.jpg");
+        }
+        &.htan {
+            background-image: url("./assets/images/htan-bg.jpg");
+        }
+        &.challenges {
+            background-image: url("./assets/images/cancer-challenges-bg.jpg");
+        }
+    }
+
+    .item-content {
+        display: flex;
+        flex-direction: column;
+        order: 2;
+    }
+}
+
 #overview {
     background-image: url("./assets/images/overview-bg.jpg");
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: 100%;
     display: flex;
-    height: 900px;
+    height: 1100px; // was 900
     padding: 0 var(--slat-horizontal-margin);
     flex-direction: column;
     align-items: center;
@@ -61,7 +149,7 @@
         padding: vars.space(1) vars.space(3);
         border-radius: 200px;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: vars.$font-weight-medium;
         line-height: 24px;
     }
 
@@ -69,7 +157,7 @@
         margin: 0;
         color: var(--black);
         font-size: 16px;
-        font-weight: 400;
+        font-weight: vars.$font-weight-regular;
         line-height: 24px;
     }
 
@@ -96,11 +184,11 @@
     font-size: 24px;
     font-family: "DM Sans";
     font-style: normal;
-    font-weight: 400;
+    font-weight: vars.$font-weight-regular;
     line-height: 28px;
 
     strong {
-        font-weight: 580;
+        font-weight: vars.$font-weight-medium;
     }
 }
 
@@ -153,9 +241,7 @@
     }
 
     a {
-        text-decoration: none;
-        color: var(--brand-dark);
-        font-size: 1.5rem;
+        font-size: 2.4rem;
     }
 }
 
@@ -166,7 +252,7 @@ h1 {
     font-family: "DM Sans";
     font-size: 36px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: vars.$font-weight-regular;
     line-height: 110%; /* 39.6px */
 }
 
@@ -176,43 +262,42 @@ h2 {
     font-family: "DM Sans";
     font-size: 32px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: vars.$font-weight-medium;
     line-height: 100%; /* 32px */
 }
 
 h3 {
-    color: var(--brand-dark, #1f3042);
     font-family: "DM Sans";
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 520;
-    line-height: 32px;
+    font-weight: vars.$font-weight-regular;
+    line-height: 28px; /* 140% */
 }
 
 h4 {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
 }
 
 h5 {
-    font-size: 1.25rem;
+    font-size: 2rem;
 }
 
 h6 {
-    font-size: 1rem;
+    font-size: 1.6rem;
 }
 
 p {
-    color: var(--brand-dark);
+    color: var(--brand-gray-dark);
     font-family: "DM Sans";
-    font-size: 14px;
+    font-size: 1.4rem;
     font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
+    font-weight: vars.$font-weight-regular;
+    line-height: 2.1rem;
 }
 
 small {
-    font-size: 0.875rem;
-    color: var(--brand-dark);
+    font-size: 1.4rem;
+    color: var(--brand-gray-dark);
     line-height: 1.4;
 }
 
@@ -232,10 +317,7 @@ small {
     background-color: vars.$white;
     color: var(--black);
     text-decoration: none;
-    font-family: "DM Sans";
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight: vars.$font-weight-medium;
     cursor: pointer;
     transition: background-color 0.3s ease;
 

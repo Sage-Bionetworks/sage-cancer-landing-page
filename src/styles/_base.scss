@@ -4,6 +4,7 @@
 html {
     scroll-behavior: smooth;
     box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
 }
 
 *,
@@ -14,16 +15,17 @@ html {
 
 :root {
     --black: #{vars.$black};
-    --brand-dark: #{vars.$brand-dark};
+    --brand-gray-dark: #{vars.$brand-gray-dark};
     --slat-horizontal-margin: #{vars.$slat-horizontal-margin-mobile};
 }
 
 body {
     background-color: vars.$white;
-    color: vars.$brand-dark;
+    color: vars.$brand-gray-dark;
     font-family: "DM Sans", sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: vars.$font-weight-regular;
+    font-size: 1.6rem; /* 16px */
     margin: 0 auto;
     max-width: vars.$max-page-width;
     padding: 0;
@@ -37,9 +39,8 @@ h4,
 h5,
 h6 {
     margin-top: 0;
-    margin-bottom: 1rem;
-    color: var(--black);
-    font-weight: 400;
+    margin-bottom: 1.6rem;
+    font-weight: vars.$font-weight-medium;
     font-feature-settings:
         "dnom" on,
         "numr" on,
@@ -54,7 +55,7 @@ h6 {
 
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1.6rem;
 
     &:last-child {
         margin-bottom: 0;
@@ -64,6 +65,10 @@ p {
 a {
     color: inherit;
     text-decoration: none;
+    &:hover {
+        color: vars.$brand-blue-light;
+        text-decoration: underline;
+    }
 }
 
 img {
@@ -81,4 +86,18 @@ img {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+.icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    vertical-align: middle;
+
+    &.up-right {
+        background-image: url("./assets/images/arrow-up-right.svg");
+    }
 }

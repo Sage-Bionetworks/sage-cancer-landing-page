@@ -27,13 +27,13 @@
 
         a {
             text-decoration: none;
-            color: var(--brand-dark);
+            color: var(--brand-gray-dark);
         }
     }
 
     #overview {
         display: flex;
-        height: 860px;
+        height: 1100px; // was 860
         padding: 0 var(--slat-horizontal-margin);
         flex-direction: column;
         align-items: flex-start;
@@ -76,23 +76,68 @@
         font-family: "DM Sans";
         font-size: 72px;
         font-style: normal;
-        font-weight: 500;
+        font-weight: vars.$font-weight-regular;
         line-height: 100%;
     }
 
     h2 {
-        font-size: 3rem;
+        font-size: 4.8rem;
     }
 
     h3 {
-        font-size: 2.5rem;
+        color: var(--Brand-gray-dark, #1f3042);
+
+        /* h3 */
+        font-family: "DM Sans";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: vars.$font-weight-medium;
+        line-height: 32px; /* 133.333% */
     }
 
     h4 {
-        font-size: 2rem;
+        font-size: 3.2rem;
     }
 
     p {
-        font-size: 1.25rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+
+    .cancer-portfolio-item {
+        display: grid;
+        gap: vars.space(10);
+        min-height: 50rem;
+        .item-image {
+            order: unset;
+            height: 100%;
+            aspect-ratio: auto;
+        }
+
+        .item-content {
+            order: unset;
+            text-align: left;
+            align-self: center;
+        }
+
+        &.image-right {
+            grid-template-columns: 2fr 3fr;
+            .item-image {
+                order: 2;
+            }
+            .item-content {
+                order: 1;
+            }
+        }
+
+        &.image-left {
+            grid-template-columns: 3fr 2fr;
+            .item-image {
+                order: 1;
+            }
+            .item-content {
+                order: 2;
+            }
+        }
     }
 }

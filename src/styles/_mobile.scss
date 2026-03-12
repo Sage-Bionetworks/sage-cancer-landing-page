@@ -57,21 +57,6 @@
         }
     }
 
-    .primary-link,
-    .secondary-link {
-        font-size: 1.8rem;
-        font-style: normal;
-        font-weight: vars.$font-weight-medium;
-        line-height: 140%; /* 25.2px */
-        display: flex;
-        align-items: center;
-        gap: 9px;
-    }
-
-    .secondary-link {
-        color: vars.$brand-gray-light;
-    }
-
     .item-image {
         width: 100%;
         order: 1;
@@ -106,6 +91,57 @@
         flex-direction: column;
         order: 2;
     }
+}
+
+#lets-talk {
+    background-image: url("./assets/images/blur-sphere-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    .content-wrapper {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 72rem;
+        max-width: 63rem;
+        h2 {
+            text-align: center;
+            font-size: 4.8rem;
+            font-style: normal;
+            font-weight: vars.$font-weight-medium;
+            line-height: 110%; /* 52.8px */
+        }
+        .cta-link {
+            padding: vars.space(3) vars.space(4);
+            justify-content: center;
+            align-items: center;
+            gap: vars.space(2);
+            border-radius: vars.space(2);
+            border: 1px solid vars.$brand-gray-dark;
+            background: vars.$brand-gray-dark;
+            color: vars.$white;
+            text-align: center;
+            font-weight: vars.$font-weight-regular;
+            letter-spacing: 0.2px;
+        }
+    }
+}
+
+.primary-link,
+.secondary-link {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: vars.$font-weight-medium;
+    line-height: 140%; /* 25.2px */
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.secondary-link {
+    color: vars.$brand-gray-light;
 }
 
 #overview {
@@ -323,5 +359,100 @@ small {
 
     &:hover {
         background-color: #f0f0f0;
+    }
+}
+
+#how-we-work {
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .heading-wrapper {
+            max-width: 62.5rem;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: vars.space(4);
+            .card {
+                display: flex;
+                /* min-width: 24rem; */
+                padding: vars.space(8);
+                flex-direction: column;
+                align-items: center;
+                gap: vars.space(5);
+                flex: 1 0 0;
+                border-radius: vars.space(2);
+                border: 1px solid var(--Light, #f7f8fc);
+                background: var(
+                    --bar-gradient,
+                    linear-gradient(
+                        127deg,
+                        rgba(181, 209, 235, 0.2) 0.7%,
+                        rgba(188, 213, 236, 0.08) 100%
+                    )
+                );
+            }
+        }
+    }
+}
+
+#footer {
+    padding-top: vars.space(12);
+    padding-bottom: vars.space(12);
+    border-top: 1px solid vars.$border-color;
+
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: vars.space(10);
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 1.8rem;
+        font-weight: vars.$font-weight-bold;
+        margin-bottom: vars.space(4);
+        color: vars.$brand-gray-dark;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    p {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        color: vars.$brand-gray-light;
+        margin-bottom: 0;
+    }
+
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .column {
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                padding: 0;
+                list-style: none;
+                margin-bottom: 2.4rem;
+                a {
+                    color: vars.$brand-gray-dark;
+                    text-decoration: none;
+                    color: var(--black, #16181e);
+                    font-size: 1.8rem;
+                    font-style: normal;
+                    font-weight: vars.$font-weight-regular;
+                    line-height: 2.4rem; /* 133.333% */
+                    letter-spacing: -0.09px;
+                }
+            }
+        }
     }
 }

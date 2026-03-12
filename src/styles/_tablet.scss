@@ -140,4 +140,38 @@
             }
         }
     }
+    #how-we-work {
+        .content-wrapper {
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+    #footer {
+        .content-wrapper {
+            grid-template-columns: repeat(4, 1fr);
+            text-align: left;
+
+            .about-sage {
+                grid-column: span 2;
+            }
+
+            .programs,
+            .about {
+                grid-column: span 1;
+            }
+        }
+
+        .column {
+            .wrapper {
+                width: 20rem;
+            }
+            &.about-sage {
+                p {
+                    max-width: 35rem;
+                }
+            }
+        }
+    }
 }

@@ -26,6 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+            navbar.classList.add("scrolled", "glassy");
+        } else {
+            navbar.classList.remove("scrolled", "glassy");
+        }
+    });
 });
 
 document

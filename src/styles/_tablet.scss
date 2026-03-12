@@ -33,7 +33,7 @@
 
     #overview {
         display: flex;
-        height: 1100px; // was 860
+        height: 110rem; // was 860
         padding: 0 var(--slat-horizontal-margin);
         flex-direction: column;
         align-items: flex-start;
@@ -41,22 +41,20 @@
         gap: vars.space(5);
         align-self: stretch;
         background-size: 65%;
-    }
-
-    .overview-content-wrapper {
-        max-width: 740px;
-    }
-
-    .overview-buttons {
-        flex-direction: row;
-        gap: vars.space(1);
-        align-self: flex-start;
+        .overview-content-wrapper {
+            max-width: 74rem;
+        }
+        .overview-buttons {
+            flex-direction: row;
+            gap: vars.space(1);
+            align-self: flex-start;
+        }
     }
 
     .news-banner {
         flex-direction: row;
-        padding: vars.space(1) vars.space(3) vars.space(1) 5px;
-        border-radius: 200px;
+        padding: vars.space(1) vars.space(3) vars.space(1) 0.5rem;
+        border-radius: 20rem;
         max-width: fit-content;
     }
 
@@ -74,7 +72,7 @@
             "ss08" on,
             "liga" off;
         font-family: "DM Sans";
-        font-size: 72px;
+        font-size: 7.2rem;
         font-style: normal;
         line-height: 100%;
     }
@@ -88,10 +86,10 @@
 
         /* h3 */
         font-family: "DM Sans";
-        font-size: 24px;
+        font-size: 2.4rem;
         font-style: normal;
         font-weight: vars.$font-weight-medium;
-        line-height: 32px; /* 133.333% */
+        line-height: 3.2rem;
     }
 
     h4 {

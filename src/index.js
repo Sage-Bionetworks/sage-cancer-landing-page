@@ -28,14 +28,72 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const navbar = document.querySelector(".navbar");
+    const navLinks = document.querySelectorAll(".nav-links.desktop-only a");
+
+    // Map navigation links to their corresponding sections
+    const trackedSections = Array.from(navLinks)
+        .map((link) => {
+            const id = link.getAttribute("href").substring(1);
+            return document.getElementById(id);
+        })
+        .filter((section) => section !== null);
+
+    /**
+     * Updates the active state of navigation links based on scroll position.
+     */
+    function updateActiveLink() {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const bodyHeight = document.documentElement.scrollHeight;
+        let activeSectionId = "";
+
+        // Threshold to activate a section (accounts for sticky header)
+        const threshold = 80;
+
+        // Determine which section is currently active by checking scroll position against section offsets
+        trackedSections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (scrollPosition >= sectionTop - threshold) {
+                activeSectionId = section.getAttribute("id");
+            }
+        });
+
+        // Case: At the very top of the page
+        if (scrollPosition < 50) {
+            activeSectionId = "";
+        }
+
+        // Case: At the very bottom of the page (ensure Contact is highlighted)
+        if (windowHeight + scrollPosition >= bodyHeight - 100) {
+            activeSectionId =
+                trackedSections[trackedSections.length - 1].getAttribute("id");
+        }
+
+        // Apply active class to the corresponding link
+        navLinks.forEach((link) => {
+            const linkId = link.getAttribute("href").substring(1);
+            if (activeSectionId && linkId === activeSectionId) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    }
 
     window.addEventListener("scroll", () => {
+        // Navbar styling
         if (window.scrollY > 0) {
             navbar.classList.add("scrolled", "glassy");
         } else {
             navbar.classList.remove("scrolled", "glassy");
         }
+
+        // Update scrollspy
+        updateActiveLink();
     });
+
+    // Initial check on load
+    updateActiveLink();
 });
 
 document

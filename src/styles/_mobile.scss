@@ -1,8 +1,10 @@
+@use "sass:color";
 @use "variables" as vars;
 
 // Mobile styles (default)
 .slat {
     padding: 0 var(--slat-horizontal-margin);
+    scroll-margin-top: 120px;
 }
 
 .partnerships-content-wrapper {
@@ -18,13 +20,19 @@
     align-items: center;
     gap: vars.space(10);
     flex-wrap: wrap;
+
+    img {
+        height: 3.6rem;
+        width: auto;
+    }
 }
 
 .cancer-portfolio-item {
     display: flex;
     flex-direction: column;
     gap: vars.space(8);
-
+    margin-top: vars.space(28);
+    margin-bottom: vars.space(28);
     .portfolio-chip {
         display: flex;
         padding: vars.space(2) vars.space(4) vars.space(2) vars.space(3);
@@ -62,7 +70,7 @@
         order: 1;
         background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;
+        background-size: contain;
         aspect-ratio: 16 / 9;
         background-color: #f6f7fb;
 
@@ -74,15 +82,18 @@
 
         &.cckp {
             background-image: url("./assets/images/cckp-bg.jpg");
+            background-color: #fff;
         }
         &.genie {
-            background-image: url("./assets/images/genie-bg.jpg");
+            background-image: url("./assets/images/project-genie-bg.jpg");
         }
         &.htan {
             background-image: url("./assets/images/htan-bg.jpg");
+            background-color: #f7f7f2;
         }
         &.challenges {
             background-image: url("./assets/images/cancer-challenges-bg.jpg");
+            background-color: #fafaf2;
         }
     }
 
@@ -150,19 +161,12 @@
     background-position: bottom right;
     background-size: 100%;
     display: flex;
-    height: 110rem; // was 900
+    height: 90rem; // was 110rem; // was 900
     padding: 0 var(--slat-horizontal-margin);
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: vars.space(5);
-    align-self: stretch;
-}
-
-.overview-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: vars.space(2);
     align-self: stretch;
 }
 
@@ -239,16 +243,23 @@
     }
 }
 
+.nav-logo {
+    display: flex;
+    align-items: flex-start;
+    gap: vars.space(2);
+}
+
 .nav-logo a {
     text-decoration: none;
     color: var(--black, #0e101a);
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     font-family: "DM Sans";
     font-style: normal;
     font-weight: vars.$font-weight-regular;
     line-height: 2.8rem;
     strong {
         font-weight: vars.$font-weight-semibold;
+        display: block;
     }
 }
 
@@ -259,6 +270,25 @@
 .mobile-only {
     display: block;
     cursor: pointer;
+}
+
+.mobile-ecosystem-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--black);
+    border: 0.1rem solid vars.$border-color;
+    padding: 0.6rem;
+    border-radius: vars.space(2);
+    .material-icons {
+        font-size: 1.6rem;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &[aria-expanded="true"] .material-icons {
+        transform: rotate(180deg);
+    }
 }
 
 // Mobile Menu Styles
@@ -272,6 +302,7 @@
     z-index: 1000;
     display: none;
     flex-direction: column;
+    overflow-y: auto;
 
     &.active {
         display: flex;
@@ -294,7 +325,7 @@
 
 .mobile-nav-links {
     list-style: none;
-    padding: vars.space(10) var(--slat-horizontal-margin);
+    padding: vars.space(10) var(--slat-horizontal-margin) vars.space(4);
     margin: 0;
 
     li {
@@ -306,6 +337,99 @@
         &:hover,
         &:active {
             color: vars.$brand-blue-light;
+        }
+    }
+}
+
+.mobile-menu .mobile-ecosystem-menu-content {
+    padding: 0 var(--slat-horizontal-margin) vars.space(10);
+    border-top: 0.1rem solid vars.$border-color;
+    padding-top: vars.space(8);
+
+    .mobile-ecosystem-nav-links {
+        li {
+            margin-bottom: vars.space(8);
+        }
+
+        a {
+            background: transparent;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: vars.space(1);
+
+            &:hover,
+            &:active {
+                background: transparent;
+                text-decoration: none;
+
+                h5 {
+                    color: vars.$brand-blue-light;
+                }
+            }
+
+            h5 {
+                font-size: 2.4rem;
+                font-weight: vars.$font-weight-regular;
+                margin: 0;
+                color: inherit;
+                line-height: 1.2;
+            }
+
+            p {
+                font-size: 1.6rem;
+                margin: 0;
+                color: vars.$brand-gray-light;
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+// Ecosystem Menu Styles (Tablet and Above)
+.mobile-ecosystem-menu {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.mobile-ecosystem-menu-content {
+    padding: vars.space(4);
+}
+
+.mobile-ecosystem-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin-bottom: vars.space(1);
+    }
+
+    a {
+        text-decoration: none;
+        padding: 16px 12px;
+        background: vars.$brand-gray-ultralight;
+        display: block;
+        &:hover,
+        &:active {
+            background-color: color.mix(
+                vars.$brand-gray-ultralight,
+                vars.$brand-blue-light,
+                94%
+            );
+            color: vars.$brand-blue-light;
+        }
+        h5 {
+            margin: 0 0 0.4rem 0;
+        }
+        p {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            color: vars.$brand-gray-light;
+            margin: 0.2rem 0 0 0;
         }
     }
 }
@@ -344,7 +468,8 @@ h4 {
 }
 
 h5 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
 }
 
 h6 {

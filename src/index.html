@@ -37,8 +37,20 @@
                     target="_blank"
                     href="https://sagebionetworks.org"
                     rel="noopener noreferrer"
-                    ><strong>Sage</strong> Cancer Research</a
+                    ><strong>Sage Bionetworks</strong> Cancer Research</a
                 >
+                <button
+                    type="button"
+                    class="mobile-ecosystem-menu-toggle desktop-only"
+                    id="mobileEcosystemMenuOpen"
+                    aria-label="Open project menu"
+                    aria-expanded="false"
+                    aria-controls="mobileEcosystemMenu"
+                >
+                    <span class="material-icons" aria-hidden="true"
+                        >expand_more</span
+                    >
+                </button>
             </div>
             <div class="nav-content">
                 <!-- Desktop Links -->
@@ -70,9 +82,10 @@
                         target="_blank"
                         href="https://sagebionetworks.org"
                         rel="noopener noreferrer"
-                        ><strong>Sage</strong> Cancer Research</a
+                        ><strong>Sage Bionetworks</strong> Cancer Research</a
                     >
                 </div>
+
                 <button
                     type="button"
                     class="mobile-menu-close"
@@ -88,6 +101,48 @@
                 <li><a href="#how-we-work">How We Work</a></li>
                 <li><a href="#lets-talk">Contact</a></li>
             </ul>
+            <div class="mobile-ecosystem-menu-content mobile-only">
+                <ul class="mobile-ecosystem-nav-links">
+                    <li>
+                        <a href="#"
+                            ><h5>Synapse Platform</h5>
+                            <p>Explore the Synapse Platform</p></a
+                        >
+                    </li>
+                    <li>
+                        <a href="#"
+                            ><h5>Sage Bionetworks</h5>
+                            <p>
+                                Driving a new age of discovery through truly
+                                open science and radical collaboration.
+                            </p></a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Mobile Ecosystem Menu Overlay -->
+        <div class="mobile-ecosystem-menu" id="mobileEcosystemMenu">
+            <div class="mobile-ecosystem-menu-content">
+                <ul class="mobile-ecosystem-nav-links">
+                    <li>
+                        <a href="#"
+                            ><h5>Synapse Platform</h5>
+                            <p>Explore the Synapse Platform</p></a
+                        >
+                    </li>
+                    <li>
+                        <a href="#"
+                            ><h5>Sage Bionetworks</h5>
+                            <p>
+                                Driving a new age of discovery through truly
+                                open science and radical collaboration.
+                            </p></a
+                        >
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <main>
@@ -100,10 +155,7 @@
                         class="news-banner mb-12 mb-tablet-8"
                     >
                         <div class="news-tag">News</div>
-                        <p class="m-0">
-                            Pancreatic tumor RNA-seq dataset from Brown et al
-                            now available
-                        </p>
+                        <p class="m-0">Sage at AACR</p>
                         <span
                             class="material-icons show-tablet"
                             aria-hidden="true"
@@ -113,50 +165,27 @@
                     <h1 class="mb-5">
                         Enabling radically collaborative cancer research.
                     </h1>
-                    <p class="body-lg mb-6">
-                        Helping cancer teams accelerate research by unifying
-                        access to data, tools, programs, and collaborators.
+                    <p class="body-lg mb-6 overview-subheading">
+                        Helping cancer research teams accelerate their work and
+                        extend their impact.
                     </p>
-                    <div class="overview-buttons">
-                        <a
-                            target="_blank"
-                            href="/#"
-                            rel="noopener noreferrer"
-                            class="button-primary"
-                            >Explore</a
-                        >
-                        <a
-                            target="_blank"
-                            href="/#"
-                            rel="noopener noreferrer"
-                            class="button-primary"
-                            >Contribute</a
-                        >
-                        <a
-                            target="_blank"
-                            href="/#"
-                            rel="noopener noreferrer"
-                            class="button-primary"
-                            >Collaborate</a
-                        >
-                    </div>
                 </div>
             </section>
             <section id="partnerships" class="slat my-12 my-tablet-16">
                 <div class="partnerships-content-wrapper">
-                    <p class="body-lg mb-mobile-10 mb-tablet-16">
+                    <p class="body-lg mb-16">
                         Enabling discovery and empowering communities through
                         the support of sponsored cancer research programs and
                         global partnerships
                     </p>
                     <div class="partnerships-logos">
                         <img
-                            src="assets/images/htan-logo.svg"
-                            alt="Black and white Human Tumor Atlas Network (HTAN) Logo"
-                        />
-                        <img
                             src="assets/images/mc2-center-logo.svg"
                             alt="Grayscale MC² Center Logo"
+                        />
+                        <img
+                            src="assets/images/htan-logo.svg"
+                            alt="Black and white Human Tumor Atlas Network (HTAN) Logo"
                         />
                         <img
                             src="assets/images/project-genie-logo.svg"
@@ -165,22 +194,20 @@
                     </div>
                 </div>
             </section>
-            <section id="cancer-portfolio" class="slat my-32">
+            <section id="cancer-portfolio" class="slat my-40 mb-32">
                 <div class="cancer-portfolio-top-wrapper">
-                    <img
+                    <!--<img
                         src="assets/images/cell-split-divider.png"
                         alt="cells dividing"
-                    />
-                    <h2 class="mt-8 mt-tablet-12">Cancer program portfolio</h2>
+                    />-->
+                    <h2 class="mt-8 mt-tablet-8">Cancer program portfolio</h2>
                     <p>
                         Where cancer researchers collaborate across systems —
                         from real-world data to cell atlases to open discovery.
                     </p>
                 </div>
                 <!-- cckp -->
-                <div
-                    class="cancer-portfolio-item image-right cckp my-16 my-tablet-40"
-                >
+                <div class="cancer-portfolio-item image-right cckp">
                     <div class="item-content">
                         <div class="portfolio-chip mb-6">
                             <span class="material-icons" aria-hidden="true"
@@ -218,8 +245,18 @@
                                 <li>Stat 4<strong>1234</strong></li>
                             </ul>
                         </div>
-                        <a class="primary-link" href="https://example.com"
+                        <a
+                            class="primary-link mb-2"
+                            href="https://cancercomplexity.synapse.org/"
                             >Explore the CCKP<span
+                                class="icon up-right"
+                                aria-hidden="true"
+                            ></span
+                        ></a>
+                        <a
+                            class="secondary-link"
+                            href="https://help.cancercomplexity.synapse.org/cancer-complexity-knowledge-portal-docs/about-the-mc2-center"
+                            >Learn about the MC² Center<span
                                 class="icon up-right"
                                 aria-hidden="true"
                             ></span
@@ -228,9 +265,7 @@
                     <div class="item-image cckp"></div>
                 </div>
                 <!-- genie -->
-                <div
-                    class="cancer-portfolio-item image-left genie my-16 my-tablet-40"
-                >
+                <div class="cancer-portfolio-item image-left genie">
                     <div class="item-content">
                         <div class="portfolio-chip mb-6">
                             <span class="material-icons" aria-hidden="true"
@@ -260,8 +295,10 @@
                                 <li>Public Release<strong>18.0</strong></li>
                             </ul>
                         </div>
-                        <a class="primary-link" href="https://example.com"
-                            >Explore Example<span
+                        <a
+                            class="primary-link"
+                            href="https://genie.synapse.org/"
+                            >Explore GENIE<span
                                 class="icon up-right"
                                 aria-hidden="true"
                             ></span
@@ -270,16 +307,13 @@
                     <div class="item-image genie"></div>
                 </div>
                 <!-- htan -->
-                <div
-                    class="cancer-portfolio-item image-right htan my-16 my-tablet-40"
-                >
+                <div class="cancer-portfolio-item image-right htan">
                     <div class="item-content">
                         <div class="portfolio-chip mb-6">
                             <span class="material-icons" aria-hidden="true"
                                 >coronavirus</span
                             >
-                            MC² Center/ Cancer Complexity Knowledge Portal
-                            (CCKP)
+                            Human Tumor Atlas Network (HTAN)
                         </div>
                         <h3>
                             HTAN is a National Cancer Institute (NCI)-funded
@@ -305,14 +339,10 @@
                                 <li>Biospecimens<strong>11,000+</strong></li>
                             </ul>
                         </div>
-                        <a class="primary-link mb-2" href="https://example.com"
+                        <a
+                            class="primary-link mb-2"
+                            href="https://humantumoratlas.org/"
                             >Explore HTAN<span
-                                class="icon up-right"
-                                aria-hidden="true"
-                            ></span
-                        ></a>
-                        <a class="secondary-link" href="https://example.com"
-                            >Learn about the MC² Center<span
                                 class="icon up-right"
                                 aria-hidden="true"
                             ></span
@@ -321,9 +351,7 @@
                     <div class="item-image htan"></div>
                 </div>
                 <!-- cancer challenges -->
-                <div
-                    class="cancer-portfolio-item image-left challenges my-16 mt-tablet-40 mt-tablet-0"
-                >
+                <div class="cancer-portfolio-item image-left challenges">
                     <div class="item-content">
                         <div class="portfolio-chip mb-6">
                             <span class="material-icons" aria-hidden="true"
@@ -344,7 +372,9 @@
                             providing shared datasets, evaluation metrics, and
                             open leaderboards across critical cancer domains.
                         </p>
-                        <a class="primary-link" href="https://example.com"
+                        <a
+                            class="primary-link"
+                            href="https://challenges.synapse.org"
                             >Explore Cancer Challenges
                             <span
                                 class="icon up-right"
@@ -368,33 +398,33 @@
                     </div>
                     <div class="cards mb-8">
                         <div class="card">
-                            <h3>Infrastructure</h3>
+                            <h3>Community Organization</h3>
                             <p>
-                                We provide secure, scalable infrastructure to
-                                host, curate, and distribute cancer research
-                                data—supporting long-term access, reuse, and
-                                cross-study analysis across programs and
-                                institutions.
+                                We sustain a collaborative cancer research
+                                community through shared data, ongoing
+                                engagement, and opportunities to work toward
+                                common goals. This helps community members
+                                connect, collaborate, and build on shared
+                                efforts.
                             </p>
                         </div>
                         <div class="card">
-                            <h3>Engineering</h3>
+                            <h3>Data Infrastructure</h3>
                             <p>
-                                Our engineering teams design and maintain
-                                research platforms, data pipelines, and analysis
-                                tools that enable scientists to explore complex
-                                datasets, reproduce results, and collaborate
-                                efficiently at scale.
+                                We design and maintain research platforms, data
+                                pipelines, and analysis tools that enable
+                                scientists to explore complex datasets,
+                                reproduce results, and collaborate efficiently
+                                at scale.
                             </p>
                         </div>
                         <div class="card">
-                            <h3>Governance</h3>
+                            <h3>Data Governance</h3>
                             <p>
-                                Our engineering teams design and maintain
-                                research platforms, data pipelines, and analysis
-                                tools that enable scientists to explore complex
-                                datasets, reproduce results, and collaborate
-                                efficiently at scale.
+                                We establish governance frameworks that balance
+                                openness with responsibility—supporting consent,
+                                privacy, access controls, and compliance so data
+                                can be shared ethically and sustainably.
                             </p>
                         </div>
                     </div>
@@ -427,7 +457,7 @@
         <footer id="contact" class="slat py-12 py-tablet-32">
             <div class="content-wrapper">
                 <div class="about-sage column">
-                    <h2 class="small-h2">Sage Cancer Research</h2>
+                    <h2 class="small-h2">Sage Bionetworks Cancer Research</h2>
                     <p>
                         Advancing cancer discovery through open science,
                         collaboration, and data infrastructure. A program of <a
@@ -482,8 +512,8 @@
                     <div class="wrapper">
                         <h3>About</h3>
                         <small
-                            >Learn more about Sage and our cancer research
-                            team</small
+                            >Learn more about Sage Bionetworks and our cancer
+                            research team</small
                         >
                         <ul class="mt-12">
                             <li>

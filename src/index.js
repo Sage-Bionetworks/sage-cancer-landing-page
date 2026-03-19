@@ -27,6 +27,53 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Mobile Ecosystem Menu Logic
+    const mobileEcosystemMenuOpen = document.getElementById(
+        "mobileEcosystemMenuOpen",
+    );
+    const mobileEcosystemMenu = document.getElementById("mobileEcosystemMenu");
+
+    const updateMobileEcosystemMenuPosition = (trigger) => {
+        if (window.innerWidth >= 900 && trigger) {
+            const rect = trigger.getBoundingClientRect();
+            mobileEcosystemMenu.style.top = `${rect.bottom + 8}px`;
+            mobileEcosystemMenu.style.left = `${rect.left}px`;
+        } else {
+            mobileEcosystemMenu.style.top = "";
+            mobileEcosystemMenu.style.left = "";
+        }
+    };
+
+    const toggleMobileEcosystemMenu = (e) => {
+        if (window.innerWidth < 900) return;
+
+        const isActive = mobileEcosystemMenu.classList.toggle("active");
+        const trigger = e?.currentTarget;
+
+        mobileEcosystemMenuOpen?.setAttribute("aria-expanded", isActive);
+
+        if (isActive) {
+            updateMobileEcosystemMenuPosition(trigger);
+        }
+    };
+
+    mobileEcosystemMenuOpen?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMobileEcosystemMenu(e);
+    });
+
+    // Close ecosystem menu when clicking outside on desktop
+    document.addEventListener("click", (e) => {
+        if (
+            mobileEcosystemMenu?.classList.contains("active") &&
+            !mobileEcosystemMenu.contains(e.target) &&
+            !mobileEcosystemMenuOpen?.contains(e.target)
+        ) {
+            mobileEcosystemMenu.classList.remove("active");
+            mobileEcosystemMenuOpen?.setAttribute("aria-expanded", "false");
+        }
+    });
+
     const navbar = document.querySelector(".navbar");
     const navLinks = document.querySelectorAll(".nav-links.desktop-only a");
 
@@ -90,6 +137,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Update scrollspy
         updateActiveLink();
+
+        // Update ecosystem menu position if open
+        if (
+            mobileEcosystemMenu?.classList.contains("active") &&
+            window.innerWidth >= 900
+        ) {
+            updateMobileEcosystemMenuPosition(mobileEcosystemMenuOpen);
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (mobileEcosystemMenu?.classList.contains("active")) {
+            if (window.innerWidth < 900) {
+                mobileEcosystemMenu.classList.remove("active");
+                mobileEcosystemMenuOpen?.setAttribute("aria-expanded", "false");
+            } else {
+                updateMobileEcosystemMenuPosition(mobileEcosystemMenuOpen);
+            }
+        }
     });
 
     // Initial check on load

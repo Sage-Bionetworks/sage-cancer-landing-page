@@ -20,7 +20,7 @@
     }
 
     .partnerships-logos img {
-        height: 4.8rem;
+        height: 5.4rem;
     }
     .mobile-ecosystem-menu {
         position: fixed;
@@ -205,8 +205,8 @@
         display: grid;
         gap: vars.space(10);
         min-height: 50rem;
-        margin-top: vars.space(55);
-        margin-bottom: vars.space(55);
+        margin-top: vars.space(40);
+        margin-bottom: vars.space(40);
         .item-image {
             order: unset;
             height: 100%;

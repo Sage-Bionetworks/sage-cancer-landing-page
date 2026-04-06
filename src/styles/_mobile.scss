@@ -40,7 +40,8 @@
         gap: 0.9rem;
         border-radius: 50rem;
         background: #f7f8fc;
-        span {
+        span,
+        img {
             display: inline-block;
             width: 2rem;
             height: 2rem;
@@ -73,6 +74,7 @@
         background-size: contain;
         aspect-ratio: 16 / 9;
         background-color: #f6f7fb;
+        border-radius: vars.space(2);
 
         img {
             width: 100%;
@@ -81,8 +83,8 @@
         }
 
         &.cckp {
-            background-image: url("./assets/images/cckp-bg.jpg");
-            background-color: #fff;
+            background-image: url("./assets/images/cckp-bg-wide.jpg");
+            background-color: #f8f9fa;
         }
         &.genie {
             background-image: url("./assets/images/project-genie-bg.jpg");
